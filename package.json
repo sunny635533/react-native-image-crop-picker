@@ -1,0 +1,61 @@
+{
+  "_from": "git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+  "_id": "react-native-image-crop-picker@0.20.5",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/react-native-image-crop-picker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "react-native-image-crop-picker@git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+    "name": "react-native-image-crop-picker",
+    "escapedName": "react-native-image-crop-picker",
+    "rawSpec": "git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+    "saveSpec": "git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+    "fetchSpec": "ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git",
+    "gitCommittish": "5e67c3afce0ac93134a9e02a748d5e6c5446306d"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+  "_shasum": "29b8df35eb17ff7ad61524ec09832f49e552427d",
+  "_spec": "react-native-image-crop-picker@git+ssh://git@bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git#5e67c3afce0ac93134a9e02a748d5e6c5446306d",
+  "_where": "/Users/sunny/Documents/sourceTree/RNBBC/src/app-js",
+  "author": {
+    "name": "Ivan Pusic"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/zhtvbnmg/react-native-media-crop-picker/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Select single or multiple images, with cropping option",
+  "homepage": "https://bitbucket.org/zhtvbnmg/react-native-media-crop-picker#readme",
+  "keywords": [
+    "react",
+    "native",
+    "react-native",
+    "image",
+    "picker",
+    "crop",
+    "cropping",
+    "multiple",
+    "camera"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "react-native-image-crop-picker",
+  "peerDependencies": {
+    "react-native": ">=0.40.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/zhtvbnmg/react-native-media-crop-picker.git"
+  },
+  "scripts": {
+    "prepublish": "rm -rf android/build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.20.5"
+}
