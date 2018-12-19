@@ -102,6 +102,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     public String TAG = this.getClass().getSimpleName();
     private File mediaFile;
 
+    private boolean compressImageBySize = false;
+
     PickerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         reactContext.addActivityEventListener(this);
@@ -139,6 +141,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         showCropGuidelines = options.hasKey("showCropGuidelines") ? options.getBoolean("showCropGuidelines") : showCropGuidelines;
         hideBottomControls = options.hasKey("hideBottomControls") ? options.getBoolean("hideBottomControls") : hideBottomControls;
         enableRotationGesture = options.hasKey("enableRotationGesture") ? options.getBoolean("enableRotationGesture") : enableRotationGesture;
+        compressImageBySize = options.hasKey("compressImageBySize") ? options.getBoolean("compressImageBySize") : compressImageBySize;
         this.options = options;
     }
 
@@ -379,6 +382,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
             return;
         }
 
+
         setConfiguration(options);
         resultCollector = new ResultCollector(promise, multiple);
 
@@ -592,7 +596,15 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
 
         // if compression options are provided image will be compressed. If none options is provided,
         // then original image will be returned
-        File compressedImage = compression.compressImage(activity, options, path);
+
+        File compressedImage;
+        if(compressImageBySize){
+            compressedImage = compression.compressImage(options,path);
+        }else{
+            compressedImage = compression.compressImage(activity, options, path);
+        }
+
+
         String compressedImagePath = compressedImage.getPath();
         BitmapFactory.Options options = validateImage(compressedImagePath);
         File file = new File(path);

@@ -17,6 +17,8 @@ import java.io.IOException;
 
 class Compression {
 
+    public final static String TAG = "image-crop-picker";
+
     File compressImage(final Activity activity, final ReadableMap options, final String originalImagePath) throws IOException {
         Integer maxWidth = options.hasKey("compressImageMaxWidth") ? options.getInt("compressImageMaxWidth") : null;
         Integer maxHeight = options.hasKey("compressImageMaxHeight") ? options.getInt("compressImageMaxHeight") : null;
@@ -68,4 +70,16 @@ class Compression {
         // failed attempt 1: ffmpeg => slow and licensing issues
         promise.resolve(originalVideo);
     }
+
+    public File compressImage(final ReadableMap options, final String originalImagePath) throws IOException{
+        Integer maxSize = options.hasKey("compressImageSize") ? options.getInt("compressImageSize") : null;
+        String appName = options.hasKey("appName") ? options.getString("appName") : "ImagePicker";
+        if(maxSize == null){
+            Log.d(TAG, "Skipping image compression");
+            return new File(originalImagePath);
+        }
+        File file = CompressBySizeUtil.saveBitmapToFile(CompressBySizeUtil.getimage(originalImagePath,maxSize),appName);
+        return file;
+    }
+
 }
